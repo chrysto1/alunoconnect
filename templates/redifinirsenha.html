@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/redefinirsenha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redifinir Senha</title>
+    
+</head>
+<body>
+    <header>
+        <a href="">
+            <button>voltar para a tela de Login</button>
+        </a>
+    </header>
+    <main>
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Replace with your Access Key -->
+     
+            <input type="hidden" name="access_key" value="783c3007-44b4-477f-8fc1-1559312e66e8">
+
+            <label for=""> Email</label>
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+            <input type="email" name="email" required placeholder="digite seu email">
+
+            <label for=""> Senha</label>
+
+            <input type="password" name="name" required placeholder="Redefinir a senha">
+
+            <label for="">Confirmar Senha</label>
+
+            <input type="password" name="name" required placeholder="confirmar a senha">
+            
+
+    <!-- Honeypot Spam Protection -->
+            <input  type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <!-- Custom Confirmation / Success Page -->
+    
+            <input type="hidden" name="redirect" value="mensagem.html">
+
+
+            <button class="botao" type="submit">Enviar pedido</button>
+
+    </form>
+
+    <script src="/static/js.js"></script>
+    </main>
+</body>
+</html>
