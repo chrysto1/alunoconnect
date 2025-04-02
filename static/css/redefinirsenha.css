@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+
+header{
+    padding: 40px;
+    background-color: blue;
+}
+
+header button{
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    
+}
+
+main form{
+    width: 50%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 10px;
+}
+
+.botao{
+    width: 20%;
+    border-radius: 7px;
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.botao:hover{
+    background-color: blue;
+    color: white;
+}
