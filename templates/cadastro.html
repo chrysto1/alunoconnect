@@ -1,0 +1,195 @@
+<!-- cadastro.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>AlunoConnect</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo/logoalunoconnect.png') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <!-- Integração com o Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <!-- Integração com o Google Fonts e fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <!-- Barra superior -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="/n_consulta-clientes">Área do cliente</a>
+                    <a href="/gerar_pdf">Minhas reservas</a>
+                    <a href="#">Atendimento</a>
+                    <a href="/login">Meu perfil</a>
+                    <a href="#">Suporte</a>
+                    <span class="nav-user">
+                    Logado como: <strong>{{ username }}</strong>
+                    </span>
+                    {% if role == 'Administrador' %}
+                    <a href="/admin">Acessar Painel Admin</a>
+                    {% endif %}
+                    <a href="/logout" class="btn btn-outline-danger">Sair</a>
+                </div>
+            </div>
+        </div>
+        <!-- Fim barra superior -->
+        
+        <!-- Cabeçalho principal -->
+        <div class="main-header container">
+            <!-- Logo GrandDrive -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo/granddrive-logo.png') }}" alt="Logo GrandDrive">
+            </div>
+            
+            <!-- Menu de navegação -->
+            <nav class="main-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Início <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Veículos <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Reservas <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Contato <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Sobre nós <i class="fas fa-chevron-down"></i></a>
+                </ul>
+                
+            </nav>
+            
+            <!-- Botão de busca e redes sociais -->
+            <div class="search-social">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Fim cabeçalho principal -->
+    </header>
+
+    <!-- Banner com imagens -->
+      <section class="banner">
+        <!-- Área do slider -->
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <img src="{{ url_for('static', filename='img/header/imgpurple.png') }}" alt="Imagem de um carro" class="banner-image">
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="{{ url_for('static', filename='img/header/img2.jpg') }}" alt="Imagem de um carro" class="banner-image">
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="{{ url_for('static', filename='img/header/img4.jpg') }}" alt="Imagem de um carro" class="banner-image">
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="{{ url_for('static', filename='img/header/img3.jpg') }}" alt="Imagem de um carro" class="banner-image">
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <img src="{{ url_for('static', filename='img/header/img5.jpg') }}" alt="Imagem de um carro" class="banner-image">
+                </div>
+            </div>
+            
+            <!-- Pontos de navegação -->
+            <div class="pagination-dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot active" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Fim do banner -->
+
+    <!-- Menu de busca de veículos -->
+    <section class="search-courses">
+        <div class="container">
+            <!-- Buscar categoria do veículo -->
+            <div class="search-box">
+                <div class="search-field">
+                    <label for="area">Categoria do veículo:</label>
+                    <div class="select-wrapper">
+                        <select id="area">
+                            <option value="">Selecione</option>
+                            <option value="informatica">Econômico</option>
+                            <option value="saude">Sedan</option>
+                            <option value="beleza">SUV</option>
+                            <option value="beleza">Esportivo</option>
+                            <option value="beleza">Luxo</option>
+                            <option value="beleza">Utilitário</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                
+                <!-- Buscar local de retirada -->
+                <div class="search-field">
+                    <label for="unidade">Local de retirada:</label>
+                    <div class="select-wrapper">
+                        <select id="unidade">
+                            <option value="">Selecione</option>
+                            <option value="centro">Aeroporto</option>
+                            <option value="osasco">Centro</option>
+                            <option value="guarulhos">Zona Norte</option>
+                            <option value="guarulhos">Shopping Pátio Maceió</option>
+                            <option value="guarulhos">Shopping Parque Maceió</option>
+                            <option value="guarulhos">Carrefour - Mangabeiras</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                
+                <button class="search-btn">Buscar</button>
+            </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
