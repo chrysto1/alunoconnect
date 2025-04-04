@@ -9,7 +9,7 @@
     <title>AlunoConnect | Login</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo/logoalunoconnect.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo/logonaback.png') }}">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -29,6 +29,8 @@
 
 </head>
 <body>
+
+    <!-- Imagem de fundo-->
     <div class="container">
         <div class="content">
             <!-- Imagem na lateral esquerda com fundo branco -->
@@ -38,7 +40,7 @@
         </div>
     </div>    
 
-    <!-- Login -->
+    <!-- Login que ficará pela direita ou centro da page-->
     <div class="form-container" action="/login" method="POST">
         <!-- TOKEN -->
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">

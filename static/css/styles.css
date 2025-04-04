@@ -1,176 +1,84 @@
-:root {
-  --primary-color: #2196F3;
-  --secondary-color: #4CAF50;
-}
-
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #f5f5f5;
 }
-
-/* STYLE CADASTRO.HTML */
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;  
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.content {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-background img {
+    max-width: 80%;
+    height: auto;
 }
 
 .form-container {
-  width: 320px;
-  border-radius: 0.75rem;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 2rem;
-  color: rgba(243, 244, 246, 1);
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
 }
 
 .title {
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.form {
-  margin-top: 1.5rem;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .input-group {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+    margin-bottom: 20px;
 }
 
 .input-group label {
-  display: block;
-  color: rgba(156, 163, 175, 1);
-  margin-bottom: 4px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .input-group input {
-  width: 100%;
-  border-radius: 0.375rem;
-  border: 1px solid rgba(55, 65, 81, 1);
-  outline: 0;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 0.75rem 1rem;
-  color: rgba(243, 244, 246, 1);
-}
-
-.input-group input:focus {
-  border-color: rgba(167, 139, 250);
-}
-
-.forgot {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175,1);
-  margin: 8px 0 14px 0;
-}
-
-.forgot a,.signup a {
-  color: rgba(243, 244, 246, 1);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.forgot a:hover, .signup a:hover {
-  text-decoration: underline rgba(167, 139, 250, 1);
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .sign {
-  display: block;
-  width: 100%;
-  background-color: rgba(167, 139, 250, 1);
-  padding: 0.75rem;
-  text-align: center;
-  color: rgba(17, 24, 39, 1);
-  border: none;
-  border-radius: 0.375rem;
-  font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-.social-message {
-  display: flex;
-  align-items: center;
-  padding-top: 1rem;
+.sign:hover {
+    background-color: #1976D2;
 }
 
-.line {
-  height: 1px;
-  flex: 1 1 0%;
-  background-color: rgba(55, 65, 81, 1);
-}
-
-.social-message .message {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: rgba(156, 163, 175, 1);
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-}
-
-.social-icons .icon {
-  border-radius: 0.125rem;
-  padding: 0.75rem;
-  border: none;
-  background-color: transparent;
-  margin-left: 8px;
-}
-
-.social-icons .icon svg {
-  height: 1.25rem;
-  width: 1.25rem;
-  fill: #fff;
+.forgot {
+    text-align: right;
+    margin-top: 5px;
 }
 
 .signup {
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175, 1);
-}
-
-
-.container {
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "menu content contato"
-    "footer footer footer";
-  grid-template-columns: 1fr 3fr;
-  gap: 5px;
-  background-color: #2196F3;
-  padding: 5px;
-}
-.container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-}
-.container > div.header {
-  grid-area: header;
-  text-align: center;
-}
-.container > div.menu {
-  grid-area: menu;
-}
-.container > div.content {
-  grid-area: content;
-}
-
-.container > div.contato {
-  grid-area: contato;
-  text-align: center;
-}
-.container > div.footer {
-  grid-area: footer;
+    text-align: center;
+    margin-top: 20px;
 }
