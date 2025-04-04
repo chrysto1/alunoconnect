@@ -90,10 +90,11 @@ body {
 }
 
 .input {
+  font-family: 'Poppins', sans-serif;
   width: 100%;
   padding: 12px 12px 12px 40px;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 17px;
   font-size: 14px;
 }
 
@@ -107,15 +108,51 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
+  font-size: 13px;  /* Reduzindo o tamanho da fonte */
+}
+
+.flex-row label {
+  font-size: 12px;  /* Tamanho específico para o label do checkbox */
+  color: #666;
+}
+
+.flex-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border-radius: 50%;  /* Mudando para 50% para ficar totalmente circular */
+    border: 1.5px solid #ddd;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.flex-row input[type="checkbox"]:checked {
+    background-color: var(--bluemarine-color);
+    border-color: var(--bluemarine-color);
+    position: relative;
+}
+
+.flex-row input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;  /* Reduzindo um pouco o tamanho do check */
 }
 
 .button-submit {
+  font-family: 'Poppins', sans-serif;
   width: 100%;
   padding: 12px;
   background: var(--bluemarine-color);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 17px;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -223,4 +260,38 @@ body {
 
 .left-side h2 .connect {
     color: var(--orange-color);
+}
+
+
+/* Aplicar Poppins globalmente */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ajustar especificamente para elementos que precisam de mais controle */
+.form label,
+.form input,
+.form button,
+.form .p,
+.footer-links a,
+.footer-copyright,
+.button-submit {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ajustar peso da fonte para diferentes elementos */
+.form label {
+    font-weight: 500;
+}
+
+.button-submit {
+    font-weight: 600;
+}
+
+.footer-links a {
+    font-weight: 400;
+}
+
+.footer-copyright {
+    font-weight: 400;
 }
