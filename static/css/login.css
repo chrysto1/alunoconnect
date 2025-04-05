@@ -47,15 +47,16 @@ body {
 }
 
 .left-side h2 span {
-  color: var(--ciane-color);
+  color: var(--orange-color);
   display: inline;
   margin-right: 5px;
 }
 
-.left-side h2 span {
-  color: var(--ciane-color);
-  display: block;
-  margin-bottom: 10px;
+.left-side h2 .slogan {
+    font-size: 0.8em;
+    display: block;
+    margin-top: 5px;
+    color: var(--bluemarine-color);
 }
 
 .form {
@@ -99,7 +100,7 @@ body {
 }
 
 .input:focus {
-  border-color: var(--ciane-color);
+  border-color: var(--orange-color);
   outline: none;
 }
 
@@ -108,11 +109,11 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-  font-size: 13px;  /* Reduzindo o tamanho da fonte */
+  font-size: 13px; 
 }
 
 .flex-row label {
-  font-size: 12px;  /* Tamanho específico para o label do checkbox */
+  font-size: 12px;
   color: #666;
 }
 
@@ -120,7 +121,7 @@ body {
     width: 16px;
     height: 16px;
     margin-right: 5px;
-    border-radius: 50%;  /* Mudando para 50% para ficar totalmente circular */
+    border-radius: 50%;
     border: 1.5px solid #ddd;
     cursor: pointer;
     appearance: none;
@@ -156,14 +157,15 @@ body {
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: all 0.3s ease;  /* Adicionado para suavizar a transição */
 }
 
 .button-submit:hover {
-  background: #03124e;
+  background: rgba(3, 18, 78, 0.8);  /* Versão mais clara do bluemarine */
 }
 
 .span {
-  color: var(--ciane-color);
+  color: var(--orange-color);
   cursor: pointer;
 }
 
@@ -173,6 +175,21 @@ body {
   font-size: 14px;
 }
 
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 120px; /* Espaço para o footer */
+    box-sizing: border-box;
+}
+
+.main-container {
+    flex: 1;
+    margin: auto;
+}
 
 .footer {
     position: fixed;
@@ -184,6 +201,29 @@ body {
     box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-container {
+        flex: 1;
+        margin-bottom: 120px; /* Espaço para o footer */
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+@media (max-height: 800px) {
+    .main-container {
+        margin-bottom: 120px;
+    }
+}
 .footer-content {
     max-width: 980px;
     margin: 0 auto;
@@ -262,13 +302,10 @@ body {
     color: var(--orange-color);
 }
 
-
-/* Aplicar Poppins globalmente */
 * {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Ajustar especificamente para elementos que precisam de mais controle */
 .form label,
 .form input,
 .form button,
@@ -279,7 +316,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Ajustar peso da fonte para diferentes elementos */
 .form label {
     font-weight: 500;
 }
@@ -294,4 +330,112 @@ body {
 
 .footer-copyright {
     font-weight: 400;
+}
+
+.slogan {
+    font-size: 0.8em;
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .main-container {
+        max-width: 900px;
+        padding: 20px;
+    }
+
+    .left-side {
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        max-width: 800px;
+        gap: 30px;
+    }
+
+    .left-side {
+        padding-right: 20px;
+    }
+
+    .left-side img {
+        width: 250px;
+    }
+
+    .left-side h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .left-side {
+        padding-right: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer {
+        position: relative;
+    }
+
+    body {
+        padding-bottom: 0;
+        padding-top: 20px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-side img {
+        width: 200px;
+    }
+
+    .left-side h2 {
+        font-size: 24px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-copyright {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-height: 800px) {
+    .main-container {
+        margin-bottom: 100px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .main-container {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .left-side {
+        padding-right: 20px;
+    }
 }
