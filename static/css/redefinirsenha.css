@@ -1,3 +1,7 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 :root {
     --orange-color: #FF8C61;
     --rose-color: #FF5E8A;
@@ -14,7 +18,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
     padding-bottom: 100px;
 }
 
@@ -61,18 +64,34 @@ body {
 }
 
 .form h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     margin: 0;
     color: #1c1e21;
 }
 
 .subtitle {
+    font-size: 14px;
+    font-weight: 400;
     color: #606770;
-    font-size: 15px;
     margin: 10px 0 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #dadde1;
+}
+
+.input {
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: var(--orange-color);
+    outline: none;
 }
 
 .inputForm {
@@ -83,21 +102,8 @@ body {
     display: block;
     margin-bottom: 8px;
     color: #606770;
-    font-size: 14px;
-}
-
-.input {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 15px;
-    box-sizing: border-box;
-}
-
-.input:focus {
-    border-color: var(--orange-color);
-    outline: none;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .button-submit {
@@ -107,8 +113,8 @@ body {
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
     margin: 20px 0;
     transition: all 0.3s ease;
@@ -120,9 +126,10 @@ body {
 }
 
 .login-link {
+    font-size: 14px;
+    font-weight: 400;
     text-align: center;
     margin-top: 10px;
-    font-size: 14px;
 }
 
 .login-link a {
@@ -182,6 +189,11 @@ body {
     width: auto;
     object-fit: contain;
     margin-right: 10px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-left: -12px;
 }
 
 @media (max-width: 768px) {
