@@ -8,10 +8,10 @@
     <title>AlunoConnect | Redefinir senha</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo/logonaback.png') }}">
+    <link rel="icon" type="image/x-icon" href="../static/img/logo/logonaback.png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="../static/css/redefinirsenha.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,44 +30,68 @@
     
 </head>
 <body>
-    <header>
-        <a href="">
-            <button>voltar para a tela de Login</button>
-        </a>
-    </header>
-    <main>
-        <form action="https://api.web3forms.com/submit" method="POST">
+    <div class="main-container">
+        <!-- Logo e título centralizados -->
+        <div class="logo-header">
+            <img src="../static/img/logo/logonaback.png" alt="Logo AlunoConnect">
+            <h1><span class="aluno">Aluno</span><span class="connect">Connect</span></h1>
+        </div>
 
-    <!-- Replace with your Access Key -->
-     
+        <!-- Formulário de redefinição de senha -->
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+            <h3>Redefinir sua senha</h3>
+            <p class="subtitle">Digite seu email e sua nova senha</p>
+
             <input type="hidden" name="access_key" value="783c3007-44b4-477f-8fc1-1559312e66e8">
 
-            <label for=""> Email</label>
-    <!-- Form Inputs. Each input must have a name="" attribute -->
-            <input type="email" name="email" required placeholder="digite seu email">
+            <div class="inputForm">
+                <label>Email</label>
+                <input type="email" name="email" class="input" required placeholder="Digite seu email">
+            </div>
 
-            <label for=""> Senha</label>
+            <div class="inputForm">
+                <label>Nova senha</label>
+                <input type="password" name="new_password" class="input" required placeholder="Digite sua nova senha">
+            </div>
 
-            <input type="password" name="name" required placeholder="Redefinir a senha">
+            <div class="inputForm">
+                <label>Confirmar senha</label>
+                <input type="password" name="confirm_password" class="input" required placeholder="Confirme sua nova senha">
+            </div>
 
-            <label for="">Confirmar Senha</label>
-
-            <input type="password" name="name" required placeholder="confirmar a senha">
-            
-
-    <!-- Honeypot Spam Protection -->
-            <input  type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-    <!-- Custom Confirmation / Success Page -->
-    
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <input type="hidden" name="redirect" value="mensagem.html">
 
+            <button type="submit" class="button-submit">Redefinir senha</button>
+            
+            <p class="login-link">Lembrou sua senha? <a href="login.html">Voltar para login</a></p>
+        </form>
+    </div>
 
-            <button class="botao" type="submit">Enviar pedido</button>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Sobre</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Cookies</a>
+                <a href="developers.html">Desenvolvedores</a>
+            </div>
+            <div class="footer-copyright">
+                <div class="logo-footer">
+                    <img src="../static/img/logo/logocomtext.png" alt="Logo AlunoConnect">
+                </div>
+                <div class="copyright">
+                    © 2025
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    </form>
-
-    <script src="/static/js.js"></script>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/js.js"></script>
 </body>
 </html>
