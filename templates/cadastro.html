@@ -60,21 +60,20 @@
                 <input placeholder="Nova senha" class="input" type="password" name="password">
             </div>
 
+            <!-- Na seção de data de nascimento -->
             <div class="birth-date">
-                <label>Data de nascimento <i class="fas fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Ao informar sua data de nascimento, você ajuda a garantir que sua experiência no AlunoConnect seja adequada à sua idade. Para saber quem viu seu perfil, acesse nossa Política de Privacidade."></i></label>
+                <label>Data de nascimento <i class="fas fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Ao informar sua data de nascimento, você ajuda a garantir que sua experiência no AlunoConnect seja adequada à sua idade."></i></label>
                 <div class="date-selects">
                     <select name="day" class="date-select">
-                        <option>1</option>
-                        <!-- Adicionar dias 1-31 via JavaScript -->
+                        <option value="">Dia</option>
                     </select>
                     <select name="month" class="date-select">
-                        <option>Jan</option>
-                        <!-- Adicionar meses via JavaScript -->
+                        <option value="">Mês</option>
                     </select>
                     <select name="year" class="date-select">
-                        <option>2025</option>
-                        <!-- Adicionar anos via JavaScript -->
+                        <option value="">Ano</option>
                     </select>
+                    <input type="hidden" name="full_birthdate" id="full-birthdate">
                 </div>
             </div>
 
@@ -105,9 +104,9 @@
                 </div>
             </div>
 
-            <p class="terms">Ao clicar em Cadastre-se, você concorda com nossos <a href="#">Termos</a>, <a href="#">Política de Privacidade</a> e <a href="#">Política de Cookies</a>.</p>
+            <!-- <p class="terms">Ao clicar em Cadastre-se, você concorda com nossos <a href="#">Termos</a>, <a href="#">Política de Privacidade</a> e <a href="#">Política de Cookies</a>.</p> -->
 
-            <button type="submit" class="button-submit">Cadastre-se</button>
+            <a href="cadastro2.html" class="button-submit" style="display: block; text-decoration: none; text-align: center;">Avançar</a>
             
             <p class="login-link">Já tem uma conta? <a href="login_static.html">Entrar</a></p>
         </form>

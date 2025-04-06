@@ -206,15 +206,50 @@ body {
 .gender-options {
     display: flex;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .gender-option {
     flex: 1;
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
     display: flex;
     align-items: center;
+    gap: 8px;
+}
+
+.gender-option:hover {
+    background-color: #f5f5f5;
+}
+
+.gender-option input[type="radio"] {
+    margin: 0;
+}
+
+.gender-option label {
+    margin: 0;
+    cursor: pointer;
+    flex: 1;
+}
+
+.custom-gender {
+    margin-top: 10px;
+}
+
+.custom-gender select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.pronome-info {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
 }
 
 .gender-option label {
@@ -497,4 +532,97 @@ input[type="radio"] {
     .main-container {
         margin-bottom: 100px;
     }
+}
+
+.gender {
+    margin-bottom: 16px;
+}
+
+.gender-options {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.gender-option {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.gender-option input[type="radio"] {
+    margin-right: 8px;
+}
+
+.gender-option label {
+    margin: 0;
+    font-size: 14px;
+}
+
+.custom-gender {
+    margin-top: 8px;
+}
+
+.custom-gender select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pronome-info {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Adicione ao final do arquivo CSS */
+.phone-group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.phone-code {
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
+    padding-right: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.phone-code option {
+    font-size: 14px;
+    padding: 4px;
+    white-space: nowrap;
+}
+
+.phone-number {
+    flex: 1;
+    min-width: 180px;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .phone-group {
+        flex-direction: column;
+    }
+    
+    .phone-code, .phone-number {
+        width: 100%;
+    }
+}
+.inputForm label {
+    display: block;
+    margin-bottom: 8px;
+    color: #606770;
+    font-size: 14px;
 }
