@@ -1,0 +1,142 @@
+<!-- tela de cadastro | login.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>AlunoConnect | Cadastro</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../static/img/logo/logonaback.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/cadastro.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main-container">
+        <!-- Logo e título centralizados -->
+        <div class="logo-header">
+            <img src="../static/img/logo/logonaback.png" alt="Logo AlunoConnect">
+            <h1><span class="aluno">Aluno</span><span class="connect">Connect</span></h1>
+        </div>
+
+        <!-- Formulário de cadastro -->
+        <form class="form" action="/cadastrando" method="POST">
+            <h3>Criar uma nova conta</h3>
+            <p class="subtitle">Conecte mentes. Compartilhe conhecimento.</p>
+
+            <div class="name-group">
+                <div class="inputForm half">
+                    <input placeholder="Nome" class="input" type="text" name="firstname">
+                </div>
+                <div class="inputForm half">
+                    <input placeholder="Sobrenome" class="input" type="text" name="lastname">
+                </div>
+            </div>
+
+            <div class="inputForm">
+                <input placeholder="E-mail" class="input" type="email" name="email">
+            </div>
+
+            <div class="inputForm">
+                <input placeholder="Nome de usuário" class="input" type="text" name="username">
+            </div>
+
+            <div class="inputForm">
+                <input placeholder="Nova senha" class="input" type="password" name="password">
+            </div>
+
+            <!-- Na seção de data de nascimento -->
+            <div class="birth-date">
+                <label>Data de nascimento <i class="fas fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Ao informar sua data de nascimento, você ajuda a garantir que sua experiência no AlunoConnect seja adequada à sua idade."></i></label>
+                <div class="date-selects">
+                    <select name="day" class="date-select">
+                        <option value="">Dia</option>
+                    </select>
+                    <select name="month" class="date-select">
+                        <option value="">Mês</option>
+                    </select>
+                    <select name="year" class="date-select">
+                        <option value="">Ano</option>
+                    </select>
+                    <input type="hidden" name="full_birthdate" id="full-birthdate">
+                </div>
+            </div>
+
+            <div class="gender">
+                <label>Gênero <i class="fas fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Você poderá alterar quem vê o gênero no seu perfil posteriormente. Selecione Personalizado se desejar escolher outro gênero ou prefere não informá-lo."></i></label>
+                <div class="gender-options">
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="feminino" id="fem">
+                        <label for="fem">Feminino</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="masculino" id="masc">
+                        <label for="masc">Masculino</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" name="gender" value="personalizado" id="pers">
+                        <label for="pers">Personalizado</label>
+                    </div>
+                </div>
+                <div class="custom-gender" style="display: none;">
+                    <select class="input" name="pronome">
+                        <option value="">Selecione seu pronome</option>
+                        <option value="ela">Feminino: "Compartilhe com ela conhecimento"</option>
+                        <option value="ele">Masculino: "Compartilhe com ele conhecimento"</option>
+                        <option value="neutro">Neutro: "Compartilhe com ele(a) conhecimento"</option>
+                    </select>
+                    <p class="pronome-info">Seu pronome fica visível para todos.</p>
+                </div>
+            </div>
+
+            <!-- <p class="terms">Ao clicar em Cadastre-se, você concorda com nossos <a href="#">Termos</a>, <a href="#">Política de Privacidade</a> e <a href="#">Política de Cookies</a>.</p> -->
+
+            <a href="/cadastro2"><input type="submit" value="avancar" class="button-submit"></a>
+            
+            <p class="login-link">Já tem uma conta? <a href="/">Entrar</a></p>
+        </form>
+    </div>
+</div>    
+    <footer class="footer">
+        <div class="footer-content">
+            
+            <div class="footer-links">
+                <a href="#">Sobre</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Cookies</a>
+                <a href="/developers">Desenvolvedores</a>
+            </div>
+            <div class="footer-copyright">
+                <div class="logo-footer">
+                    <img src="../static/img/logo/logocomtext.png" alt="Logo AlunoConnect">
+                </div>
+                <div class="copyright">
+                © 2025
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../static/js/main.js"></script>
+    <script src='../static/js/register.js'></script>
+</body>
+</html>
