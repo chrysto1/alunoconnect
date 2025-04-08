@@ -70,6 +70,45 @@ body {
     margin-top: -30px;
 }
 
+.nav-tabs-1{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .nav-center {
+        display: none;
+    }
+
+    .nav-tabs-1{
+        display: block;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        background-color: white;
+        margin-top: 88vh;
+        position: fixed;
+    }
+
+    .post-input-button {
+        display: flex;
+        flex-wrap: wrap; /* Permite que o texto quebre linha se necessário */
+        justify-content: center;
+        align-items: center;
+        font-size: 14px; /* Reduz o tamanho do texto para telas menores */
+        padding: 10px 10px; /* Ajuste no padding */
+        width: auto; /* O botão se ajusta ao conteúdo */
+        height: 60px;
+        max-width: 90%; /* Garante que o botão não fique muito grande */
+    }
+
+    .content1{
+        margin-top: 1px;
+    }
+}
+
+
 .nav-right {
     display: flex;
     align-items: center;

@@ -18,7 +18,7 @@ document.getElementById("publicacao_texto").addEventListener("submit", async fun
         });
 
         if (response.ok) {
-            alert("Publicado com sucesso!");
+            location.reload();
         } else {
             alert("Erro ao publicar.");
         }
