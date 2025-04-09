@@ -18,9 +18,9 @@ def conecta_db():
     try:
         conecta = psycopg2.connect(
             host=os.environ.get('DB_HOST', 'localhost'),
-            database=os.environ.get('DB_NAME', 'postgres'),
+            database=os.environ.get('DB_NAME', 'alunoconnect'),
             user=os.environ.get('DB_USER', 'postgres'),
-            password=os.environ.get('DB_PASSWORD', '123')
+            password=os.environ.get('DB_PASSWORD', '1234')
         )
         return conecta
     except psycopg2.Error as e:
@@ -40,7 +40,7 @@ def login_required(f):
 @sistema.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get('email')
+        username = request.form.get('usuario')
         password = request.form.get('senha')
 
         if not username or not password:
@@ -53,114 +53,42 @@ def login():
             return render_template('login.html')
 
         try:
+            # Na função login
             with conexao.cursor() as cursor:
-                cursor.execute("SELECT * FROM usuarios WHERE nome = %s", (username,))
+                cursor.execute("SELECT * FROM aluno WHERE usuario = %s", (username,))
                 user = cursor.fetchone()
-                if user and check_password_hash(user[2], password):
+                if user and check_password_hash(user[5], password):
                     session.permanent = True
                     session['logged_in'] = True
-                    session['username'] = user[1]
+                    session['username'] = user[1]  # nome completo
                     session['user_id'] = user[0]
+                    session['curso'] = user[8]
                     flash('Login realizado com sucesso!', 'sucesso')
                     return redirect(url_for('homepage'))
-                else:
-                    flash('Usuário ou senha incorretos.', 'erro')
+
+# Na função finalizar_cadastro
+                # Configura a sessão do usuário
+                session.pop('cadastro_dados', None)
+                session.permanent = True
+                session['logged_in'] = True
+                session['username'] = dados['nome']  # nome completo
+                session['user_id'] = novo_usuario[0]
+                session['curso'] = curso
+                    
+                flash('Cadastro realizado com sucesso!', 'sucesso')
+                return redirect(url_for('homepage'))
+
         except Exception as e:
-            print(f"Erro na autenticação: {e}")
-            flash("Erro durante a autenticação.", 'erro')
+            print(f"Erro detalhado no banco de dados: {e}")
+            flash(f'Erro ao salvar os dados: {str(e)}', 'erro')
+            return redirect('/cadastro2')
         finally:
-            conexao.close()
-
-    return render_template('login.html')
-
-#rota principal
-@sistema.route("/", methods=['GET'])
-@login_required
-def homepage():
-    try:
-        # Conecta ao banco de dados
-        conexao = conecta_db()
-        if not conexao:
-            return "Erro ao conectar ao banco de dados", 500
-
-        try:
-            with conexao.cursor() as cursor:
-                # Busca todas as publicações
-                cursor.execute("SELECT * FROM postagens ")
-                publicacoes = cursor.fetchall()
-        except Exception as e:
-            print(f"Erro ao buscar publicações: {e}")
-            return "Erro ao buscar publicações", 500
-        finally:
-            conexao.close()
-
-        # Renderiza o template com as publicações
-        return render_template("home.html", publicacoes=publicacoes)
+            conecta.close()
 
     except Exception as e:
-        print(f"Erro inesperado: {e}")
-        return "Erro inesperado no servidor", 500
-    
-
-
-#rota para sair do sistema desconectando o e-mail 
-@sistema.route("/logout")
-@login_required
-def logout():
-    session.clear()
-    flash('Você foi deslogado.', 'success')
-    return redirect(url_for('login'))
-
-@sistema.route("/redefinirSenha")
-def redefinir():
-    return render_template("redifinirsenha.html")
-
-@sistema.route("/cadastro")
-def cadastro():
-    return render_template("cadastro.html")
-
-@sistema.route("/developers")
-def developers():
-    return render_template("developers.html")
-
-
-@sistema.route("/cadastrando", methods=["POST"])
-def cadastrandousuario():
-    # Obtendo os dados do formulário
-    firstname = request.form['firstname']
-    lastname = request.form['lastname']
-    email = request.form['email']
-    username = request.form['username']
-    password = request.form['password']
-    
-    # Construindo a data de nascimento
-    day = request.form['day']
-    month = request.form['month']
-    year = request.form['year']
-    birthdate = f"{day}/{month}/{year}"
-
-    # Capturando o gênero
-    gender = request.form.get('gender', None)
-
-    # Agora, conectando ao banco de dados
-    conecta = conecta_db()
-    if not conecta:
-        return jsonify({'erro': 'Erro ao conectar ao banco de dados.'}), 500
-
-    try:
-        cursor = conecta.cursor()
-        # Corrigindo a query SQL: adicionando vírgulas entre os placeholders
-        cursor.execute("INSERT INTO usuario (firstname, lastname, email, username, password, birthdate, day, month, year, gender) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
-                       (firstname, lastname, email, username, password, birthdate, day, month, year, gender))
-        conecta.commit()
-        cursor.close()
-    except Exception as e:
-        print(f"Erro ao inserir no banco: {e}")
-        return jsonify({'erro': 'Erro ao salvar a postagem no banco de dados.'}), 500
-    finally:
-        conecta.close()
-
-    return render_template('cadastro2.html')
+        print(f"Erro ao finalizar cadastro: {e}")
+        flash(f'Erro ao processar o cadastro: {str(e)}', 'erro')
+        return redirect('/cadastro2')
 
 
 @sistema.route("/perfil/<int:user_id>")

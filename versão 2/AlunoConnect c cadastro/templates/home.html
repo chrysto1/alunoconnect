@@ -106,8 +106,8 @@
                 <div class="profile-cover"></div>
                 <div class="profile-info">
                     <img src="../static/img/profile/default.png" alt="Profile">
-                    <h2>Nome do Usuário</h2>
-                    <p>Estudante | Curso</p>
+                    <h2>{{ ' '.join(session.username.split()[:2]) }}</h2>
+                    <p>Estudante | {{ session.curso }}</p>
                     <p>Instituição de Ensino</p>
                 </div>
             </div>
