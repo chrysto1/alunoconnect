@@ -35,7 +35,7 @@
         </div>
 
         <!-- Formulário de cadastro -->
-        <form class="form" action="/finalizar_cadastro" method="POST">
+        <form class="form" action="/cadastro" method="POST">
             <h3>Complete seu cadastro</h3>
             <p class="subtitle">Informações acadêmicas</p>
 
@@ -54,172 +54,13 @@
                 <label>Curso Técnico</label>
                 <select name="curso" class="input">
                     <option value="">Selecione seu curso</option>
-                    
-                    <optgroup label="GASTRONOMIA">
-                        <option value="atendente_lanchonete">Atendente de Lanchonete</option>
-                        <option value="auxiliar_cozinha">Auxiliar de Cozinha</option>
-                        <option value="barista">Barista</option>
-                        <option value="bartender">Bartender</option>
-                        <option value="boas_praticas">Boas Práticas para Serviços de Alimentação</option>
-                        <option value="cake_design">Cake Design</option>
-                        <option value="confeitaria_sem_acucar">Confeitaria sem Açúcar</option>
-                        <option value="confeitaria_sem_gluten">Confeitaria sem Glúten e sem Lactose</option>
-                        <option value="confeitaria_vegana">Confeitaria Vegana</option>
-                        <option value="confeiteiro">Confeiteiro</option>
-                        <option value="cozinha_asiatica">Cozinha Asiática</option>
-                        <option value="cozinha_americas">Cozinha das Américas</option>
-                        <option value="cozinha_europeia">Cozinha Europeia</option>
-                        <option value="cozinha_mediterranea">Cozinha Mediterrânea</option>
-                        <option value="cozinhas_vegetarianas">Cozinhas Vegetarianas</option>
-                        <option value="cozinheiro">Cozinheiro</option>
-                        <option value="doceiro">Doceiro</option>
-                        <option value="doces_salgados">Doces e Salgados para Festas</option>
-                        <option value="garcom">Garçom</option>
-                        <option value="hostess">Hostess</option>
-                        <option value="massas_folhadas">Massas Folhadas</option>
-                        <option value="padeiro">Padeiro</option>
-                        <option value="pizzaiolo">Pizzaiolo</option>
-                        <option value="pizzas_sem_gluten">Preparo de Pizzas sem Glúten sem Lactose</option>
-                        <option value="qualidade_atendimento">Qualidade no Atendimento em Serviços de Alimentos e Bebidas</option>
-                        <option value="salgadeiro">Salgadeiro</option>
-                        <option value="tecnico_gastronomia">Técnico em Gastronomia</option>
-                        <option value="tortas_finas">Tortas Finas</option>
-                    </optgroup>
-
-                    <optgroup label="TURISMO E HOSPITALIDADE">
-                        <option value="agente_turismo">Agente de Informação Turística</option>
-                        <option value="atendimento_pcd">Atendimento de Pessoas com Deficiência no Turismo</option>
-                        <option value="camareira">Camareira em Meios de Hospedagem</option>
-                        <option value="camareiro">Camareiro em Meios de Hospedagem</option>
-                        <option value="cerimonialista">Cerimonialista</option>
-                        <option value="organizador_eventos">Organizador de Eventos</option>
-                        <option value="recepcionista_eventos">Recepcionista de Eventos</option>
-                        <option value="recepcionista_hospedagem">Recepcionista em Meios de Hospedagem</option>
-                        <option value="recreador">Recreador</option>
-                        <option value="supervisao_governanca">Supervisão em Governança</option>
-                        <option value="tecnico_eventos">Técnico em Eventos</option>
-                        <option value="tecnico_guia_turismo">Técnico em Guia de Turismo</option>
-                        <option value="tecnico_hospedagem">Técnico em Hospedagem</option>
-                    </optgroup>
-
-                    <optgroup label="SAÚDE">
-                        <option value="atendente_farmacia">Atendente de Farmácia</option>
-                        <option value="atualizacao_coleta">Atualização em Coleta Sanguínea e Interpretação de Exames Laboratoriais</option>
-                        <option value="atualizacao_liquidos">Atualização em Líquidos Cavitários</option>
-                        <option value="auxiliar_bucal">Auxiliar em Saúde Bucal</option>
-                        <option value="bioquimica">Bioquímica Laboratorial</option>
-                        <option value="calculos_medicamentos">Cálculos e Segurança na Administração de Medicamentos</option>
-                        <option value="copeiro">Copeiro Hospitalar</option>
-                        <option value="cuidador_idoso">Cuidador de Idoso</option>
-                        <option value="faturamento_medico">Faturamento Médico e Hospitalar</option>
-                        <option value="instrumentacao">Instrumentação Cirúrgica</option>
-                        <option value="massagista">Massagista</option>
-                        <option value="procedimentos_puncao">Procedimentos Aplicados à Punção Venosa: Enfermagem</option>
-                        <option value="recepcionista_saude">Recepcionista em Serviços de Saúde</option>
-                        <option value="tecnicas_microscopia">Técnicas de Microscopia Laboratorial</option>
-                        <option value="tecnicas_radiologicas">Técnicas Radiológicas</option>
-                        <option value="tecnico_analises">Técnico em Análises Clínicas</option>
-                        <option value="tecnico_enfermagem">Técnico em Enfermagem</option>
-                        <option value="tecnico_estetica">Técnico em Estética</option>
-                        <option value="tecnico_nutricao">Técnico em Nutrição e Dietética</option>
-                        <option value="tecnico_radiologia">Técnico em Radiologia</option>
-                        <option value="tecnico_saude_bucal">Técnico em Saúde Bucal</option>
-                    </optgroup>
-
-                    <optgroup label="TECNOLOGIA DA INFORMAÇÃO">
-                        <option value="administrador_redes">Administrador de Redes</option>
-                        <option value="aplicacoes_python">Aplicações Web com Python</option>
-                        <option value="bi_excel">Business Intelligence com Excel</option>
-                        <option value="bi_powerbi">Business Intelligence com Power BI</option>
-                        <option value="ccna_intro">CCNAv7: Introduction to Networks</option>
-                        <option value="ccna_switching">CCNAv7: Switching Routing and Wireless</option>
-                        <option value="flutter">Criando Aplicativos com Flutter</option>
-                        <option value="desenvolver_bd">Desenvolver Banco de Dados</option>
-                        <option value="desenvolver_sistema">Desenvolver Sistema de Informação</option>
-                        <option value="frontend">Desenvolvimento Web: Front End</option>
-                        <option value="rede_windows">Implantação de Rede Local com Windows</option>
-                        <option value="implementar_bd">Implementar Banco de Dados</option>
-                        <option value="instalador_redes">Instalador e Reparador de Redes de Computadores</option>
-                        <option value="javascript">JavaScript: Interatividade para Web</option>
-                        <option value="operador_computador">Operador de Computador</option>
-                        <option value="manutencao_redes">Planejar e Executar a Manutenção de Redes Locais de Computadores</option>
-                        <option value="programador_sistemas">Programador de Sistemas</option>
-                        <option value="programador_web">Programador Web</option>
-                        <option value="tecnico_computacao">Técnico em Computação Gráfica</option>
-                        <option value="tecnico_informatica">Técnico em Informática</option>
-                        <option value="tecnico_internet">Técnico em Informática para Internet</option>
-                        <option value="tecnico_manutencao">Técnico em Manutenção e Suporte em Informática</option>
-                        <option value="tecnico_redes">Técnico em Redes de Computadores</option>
-                    </optgroup>
-
-                    <optgroup label="BELEZA E ESTÉTICA">
-                        <option value="barbeiro">Barbeiro</option>
-                        <option value="cabeleireiro">Cabeleireiro</option>
-                        <option value="depilador">Depilador</option>
-                        <option value="design_mechas">Design de Mechas e de Cor</option>
-                        <option value="manicure">Manicure e Pedicure</option>
-                        <option value="maquiador">Maquiador</option>
-                        <option value="maquiagem_festa">Maquiagem para Festa</option>
-                        <option value="maquiagem_noivas">Maquiagem para Noivas</option>
-                        <option value="modelagem_henna">Modelagem e Henna para Sobrancelhas</option>
-                        <option value="terapia_capilar">Terapia Capilar</option>
-                    </optgroup>
-
-                    <optgroup label="GESTÃO E COMÉRCIO">
-                        <option value="arte_vender">A Arte de se Comunicar e Vender Mais</option>
-                        <option value="assistente_adm">Assistente Administrativo</option>
-                        <option value="assistente_logistica">Assistente de Logística</option>
-                        <option value="assistente_rh">Assistente de Recursos Humanos</option>
-                        <option value="assistente_financeiro">Assistente Financeiro</option>
-                        <option value="desenvolvimento_equipes">Desenvolvimento de Equipes</option>
-                        <option value="estoquista">Estoquista</option>
-                        <option value="inteligencia_vendas">Inteligência Emocional em Vendas</option>
-                        <option value="operador_caixa">Operador de Caixa</option>
-                        <option value="operador_telemarketing">Operador de Telemarketing</option>
-                        <option value="promotor_vendas">Promotor de Vendas</option>
-                        <option value="recepcionista">Recepcionista</option>
-                        <option value="repositor">Repositor de Mercadorias</option>
-                        <option value="tecnico_adm">Técnico em Administração</option>
-                        <option value="tecnico_logistica">Técnico em Logística</option>
-                        <option value="tecnico_rh">Técnico em Recursos Humanos</option>
-                        <option value="tecnico_secretariado">Técnico em Secretariado</option>
-                    </optgroup>
-
-                    <optgroup label="IDIOMAS">
-                        <option value="espanhol_turismo">Espanhol Básico Aplicado aos Serviços Turísticos</option>
-                        <option value="espanhol_hotelaria">Espanhol para Hotelaria</option>
-                        <option value="ingles_turismo">Inglês Básico Aplicado aos Serviços Turísticos</option>
-                        <option value="ingles_hotelaria">Inglês para Hotelaria</option>
-                    </optgroup>
-
-                    <optgroup label="INFRAESTRUTURA">
-                        <option value="agente_limpeza">Agente de Limpeza e Conservação</option>
-                        <option value="frentista">Frentista</option>
-                        <option value="portaria_remota">Portaria Remota</option>
-                        <option value="porteiro">Porteiro e Vigia</option>
-                    </optgroup>
-
-                    <optgroup label="MODA">
-                        <option value="alfaiataria">Alfaiataria Feminina</option>
-                        <option value="consultoria_imagem">Consultoria de Imagem</option>
-                        <option value="costura_intima">Costura de Moda Íntima</option>
-                        <option value="costura_modelagem">Costura e Modelagem</option>
-                        <option value="costura_industrial">Costura Industrial</option>
-                        <option value="costureiro">Costureiro</option>
-                        <option value="desenhista_moda">Desenhista de Moda</option>
-                        <option value="estilista">Estilista de Moda</option>
-                        <option value="modelagem_infantil">Modelagem Infantil</option>
-                        <option value="modelista">Modelista</option>
-                        <option value="moulage">Moulage</option>
-                        <option value="plus_size">Plus Size: Consultoria de Imagem e Estilo</option>
-                        <option value="vitrinista">Vitrinista</option>
-                    </optgroup>
-
-                    <optgroup label="SEGURANÇA">
-                        <option value="tecnico_seguranca">Técnico em Segurança do Trabalho</option>
-                    </optgroup>
-            </select>
-        </div>
+                    <option value="informatica">Técnico em Informática</option>
+                    <option value="administracao">Técnico em Administração</option>
+                    <option value="enfermagem">Técnico em Enfermagem</option>
+                    <option value="mecanica">Técnico em Mecânica</option>
+                    <!-- Adicionar mais cursos conforme necessário -->
+                </select>
+            </div>
 
             <div class="inputForm">
                 <label>Turma</label>
