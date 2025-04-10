@@ -1,0 +1,22 @@
+/* Fix for dropdown styling across all pages */
+.profile-dropdown .profile-header {
+    background-color: white !important;
+    color: #1c1e21 !important;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+.profile-dropdown .profile-group {
+    color: #65676b !important;
+}
+
+.profile-dropdown .profile-name {
+    color: #1c1e21 !important;
+}
+
+.profile-dropdown .profile-link {
+    color: #1c1e21;
+}
+
+.profile-dropdown .profile-link i {
+    color: #65676b;
+}

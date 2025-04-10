@@ -55,11 +55,11 @@
                 </div>
                 <!-- Novo menu dropdown -->
                 <div class="profile-dropdown" id="profileMenu">
-                    <div class="profile-header">
+                    <div class="profile-header" style="cursor: pointer;" onclick="window.location.href='/perfil/{{ session.user_id }}'">
                         <img src="../static/img/profile/default.png" alt="Profile">
-                        <div class="profile-info">
-                            <span class="profile-name">Usuário</span>
-                            <span class="profile-group">Grupo</span>
+                        <div class="profile-info" style="text-align: left;">
+                            <span class="profile-name">{{ session.nome }}</span>
+                            <span class="profile-group">Estudante | {{ session.curso }}</span>
                         </div>
                     </div>
                     <div class="profile-links">
@@ -106,7 +106,7 @@
                 <div class="profile-cover"></div>
                 <div class="profile-info">
                     <img src="../static/img/profile/default.png" alt="Profile">
-                    <h2>{{ ' '.join(session.username.split()[:2]) }}</h2>
+                    <h2>{{ session.nome }}</h2>
                     <p>Estudante | {{ session.curso }}</p>
                     <p>Instituição de Ensino</p>
                 </div>

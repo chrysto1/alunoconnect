@@ -5,6 +5,10 @@
     --bluemarine-color: #03124e;
   }
 
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 .container1 {
     display: grid;
     grid-template-columns: 225px minmax(0, 540px) 300px;

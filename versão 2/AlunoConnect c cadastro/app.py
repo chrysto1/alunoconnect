@@ -49,6 +49,8 @@ def login():
     if request.method == 'POST':
         username = request.form.get('usuario')
         password = request.form.get('senha')
+        
+        print(f"Tentativa de login - Usuário: {username}")  # Debug 1
 
         if not username or not password:
             flash('Preencha todos os campos.', 'erro')
@@ -56,6 +58,7 @@ def login():
 
         conexao = conecta_db()
         if not conexao:
+            print("Falha na conexão com o banco")  # Debug 2
             flash('Erro ao conectar ao banco de dados.', 'erro')
             return render_template('login.html')
 
@@ -63,17 +66,26 @@ def login():
             with conexao.cursor() as cursor:
                 cursor.execute("SELECT * FROM aluno WHERE usuario = %s", (username,))
                 user = cursor.fetchone()
-                if user and check_password_hash(user[3], password):  # Ajuste o índice conforme a ordem das colunas
+                print(f"Resultado da consulta: {user}")  # Debug 3
+                
+                if user:
+                    print(f"Senha hash do banco: {user[6]}")  # Debug 4
+                    senha_valida = check_password_hash(user[6], password)
+                    print(f"Resultado da validação da senha: {senha_valida}")  # Debug 5
+                
+                if user and check_password_hash(user[6], password):  # índice 6 é a senha
                     session.permanent = True
                     session['logged_in'] = True
-                    session['username'] = user[1]  # nome do usuário
-                    session['user_id'] = user[0]   # id do usuário
+                    session['nome'] = user[1]      # nome
+                    session['curso'] = user[9]     # curso (índice 9 - último campo)
+                    session['user_id'] = user[0]   # id
                     flash('Login realizado com sucesso!', 'sucesso')
                     return redirect(url_for('homepage'))
                 else:
+                    print("Usuário não encontrado ou senha incorreta")  # Debug 7
                     flash('Usuário ou senha incorretos.', 'erro')
         except Exception as e:
-            print(f"Erro na autenticação: {e}")
+            print(f"Erro detalhado na autenticação: {str(e)}")  # Debug 8
             flash("Erro durante a autenticação.", 'erro')
         finally:
             conexao.close()
@@ -146,13 +158,10 @@ def cadastrandousuario():
             flash('Preencha todos os campos obrigatórios', 'erro')
             return redirect('/cadastro')
 
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
-        nome_completo = f"{firstname} {lastname}"
-        
-        # Armazena dados da primeira etapa
+        # Store first name and last name separately
         session['cadastro_dados'] = {
-            'nome': nome_completo,
+            'nome': request.form['firstname'],
+            'sobrenome': request.form['lastname'],
             'usuario': request.form['username'],
             'email': request.form['email'],
             'senha': generate_password_hash(request.form['password']),
@@ -174,19 +183,13 @@ def finalizar_cadastro():
     try:
         dados = session['cadastro_dados']
         
-        # Debug para verificar os dados recebidos
-        print("Dados do formulário:", request.form)
-        
-        # Captura os campos do formulário
+        # Get form data
         telefone = request.form.get('phone', '')
         curso = request.form.get('curso', '')
-        turma = request.form.get('turma', '')
 
-        print(f"Telefone: {telefone}, Curso: {curso}, Turma: {turma}")
-
-        # Verificação dos campos obrigatórios
-        if not curso or not turma or not telefone:
-            flash('Preencha os campos obrigatórios: telefone, curso e turma', 'erro')
+        # Updated validation (removed turma check)
+        if not curso or not telefone:
+            flash('Preencha os campos obrigatórios: telefone e curso', 'erro')
             return redirect('/cadastro2')
 
         conecta = conecta_db()
@@ -196,66 +199,53 @@ def finalizar_cadastro():
 
         try:
             with conecta.cursor() as cursor:
-                # Verificar se a tabela existe
+                # First, ensure the table exists with the correct structure
                 cursor.execute("""
-                    SELECT EXISTS (
-                        SELECT FROM information_schema.tables 
-                        WHERE table_name = 'aluno'
-                    );
+                    CREATE TABLE IF NOT EXISTS aluno (
+                        aluno_id SERIAL PRIMARY KEY,
+                        nome VARCHAR(100) NOT NULL,
+                        sobrenome VARCHAR(100) NOT NULL,
+                        usuario VARCHAR(100) UNIQUE NOT NULL,
+                        data_nascimento DATE NOT NULL,
+                        email VARCHAR(100) UNIQUE NOT NULL,
+                        senha VARCHAR(255) NOT NULL,
+                        telefone VARCHAR(20) NOT NULL,
+                        curso VARCHAR(100) NOT NULL
+                    )
                 """)
-                tabela_existe = cursor.fetchone()[0]
-                
-                if not tabela_existe:
-                    # Criar tabela conforme a estrutura correta
-                    cursor.execute("""
-                        CREATE TABLE aluno (
-                            aluno_id serial primary key,
-                            nome varchar(20) not null,
-                            usuario varchar(100) unique not null,
-                            data_nascimento date not null,
-                            email varchar(100) unique not null,
-                            senha varchar not null,
-                            foto bytea,
-                            telefone varchar(20) unique not null,
-                            curso varchar(30) not null,
-                            turma_id integer, -- removido o not null
-                            CONSTRAINT chk_senha_length CHECK (char_length(senha) >= 8)
-                        )
-                    """)
-                    conecta.commit()
-                    print("Tabela aluno criada com sucesso")
-                
-                # Converter a data para o formato correto
+                conecta.commit()
+
+                # Convert date to correct format
                 data_partes = dados['data_nascimento'].split('/')
                 data_formatada = f"{data_partes[2]}-{data_partes[1]}-{data_partes[0]}"
                 
-                # Inserir o novo usuário
+                # Insert new user
                 cursor.execute("""
                     INSERT INTO aluno 
-                    (nome, usuario, data_nascimento, email, senha, telefone, curso) 
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    (nome, sobrenome, usuario, data_nascimento, email, senha, telefone, curso) 
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                     RETURNING aluno_id, usuario
                 """, (
                     dados['nome'],
+                    dados['sobrenome'],
                     dados['usuario'],
                     data_formatada,
                     dados['email'],
                     dados['senha'],
                     telefone,
                     curso
-                    # removido o parâmetro turma
                 ))
                 
                 novo_usuario = cursor.fetchone()
                 conecta.commit()
-                print(f"Usuário cadastrado com sucesso: {novo_usuario}")
 
-                # Configura a sessão do usuário
+                # Configure user session
                 session.pop('cadastro_dados', None)
                 session.permanent = True
                 session['logged_in'] = True
-                session['username'] = dados['usuario']
-                session['user_id'] = novo_usuario[0]
+                session['nome'] = dados['nome']      # nome
+                session['curso'] = curso             # curso
+                session['user_id'] = novo_usuario[0] # id do usuário
 
                 flash('Cadastro realizado com sucesso!', 'sucesso')
                 return redirect(url_for('homepage'))
@@ -263,6 +253,7 @@ def finalizar_cadastro():
         except Exception as e:
             print(f"Erro detalhado no banco de dados: {e}")
             flash(f'Erro ao salvar os dados: {str(e)}', 'erro')
+            conecta.rollback()  # Added rollback on error
             return redirect('/cadastro2')
         finally:
             conecta.close()
@@ -281,15 +272,22 @@ def perfil(user_id):
         return "Erro ao conectar ao banco de dados.", 500
 
     try:
-        cursor = conexao.cursor()
-        cursor.execute("""
-            SELECT id, texto, criado_em 
-            FROM postagens 
-            WHERE user_id = %s
-        """, (user_id,))
-        postagens = cursor.fetchall()
-        cursor.close()
-        return render_template('perfil.html', postagens=postagens)
+        with conexao.cursor() as cursor:
+            # Buscar apenas informações do usuário
+            cursor.execute("""
+                SELECT aluno_id, nome, sobrenome, curso 
+                FROM aluno 
+                WHERE aluno_id = %s
+            """, (user_id,))
+            user_info = cursor.fetchone()
+
+            if not user_info:
+                return "Usuário não encontrado", 404
+
+            return render_template('perfil.html', user=user_info)
+    except Exception as e:
+        print(f"Erro ao carregar perfil: {e}")
+        return "Erro ao carregar perfil", 500
     finally:
         conexao.close()
 
@@ -362,7 +360,7 @@ def pesquisar():
         cursor = conexao.cursor()
         cursor.execute("""
             SELECT nome
-            FROM usuarios
+            FROM aluno
             WHERE nome LIKE %s
         """, (f"%{nome}%",))  # Busca parcial
         usuarios = cursor.fetchall()
