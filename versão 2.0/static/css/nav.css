@@ -1,0 +1,337 @@
+:root {
+    --orange-color: #FF8C61;
+    --rose-color: #FF5E8A;
+    --ciane-color: #00D4FF;
+    --bluemarine-color: #03124e;
+  }
+
+
+  .nav-tabs-1{
+    display: none;
+}
+
+
+  @media screen and (max-width: 700px) {
+    .nav-center {
+        display: none !important;
+    }
+
+    .nav-tabs-1{
+        width: 100%;
+        display: block;
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        position: fixed;
+        margin-top: 88vh;
+    }
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 4px 16px;
+    height: 15px;  /* Reduzido para um tamanho mais compacto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.sticky {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    padding-top: 60px; /* Ajuste este valor de acordo com a altura da sua navbar */
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 20px;
+    max-width: 360px;
+}
+
+.nav-logo {
+    height: 45px;
+    margin-right: 10px;
+    margin-top: -50px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);;
+    border-radius: 50px;
+    margin-top: -50px;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    margin-left: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.nav-center {
+    display: block;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-right: 20px;
+    margin-top: -50px;  /* Ajustado para alinhar com os outros elementos */
+    justify-content: flex-end;
+    max-width: 360px;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-icon {
+    padding: 8px 30px;  /* Reduzido o padding */
+    border-radius: 8px;
+    color: #65676b;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fas {
+    font-size: 18px;  /* Reduzido o tamanho do ícone */
+}
+
+.nav-icon.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;  /* Ajustado para alinhar com a nova altura */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--orange-color);
+}
+
+.nav-icon:hover {
+    background-color: #f0f2f5;
+}
+
+.nav-icon.active {
+    color: var(--orange-color);
+    position: relative;
+}
+
+.nav-icon.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--orange-color);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-right: 20px;
+    justify-content: flex-end;
+    max-width: 360px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #050505;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.nav-icon-circle:hover {
+    background-color: #e4e6eb;
+}
+
+.nav-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fas {
+    font-size: 20px;
+}
+
+.nav-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 20px;  /* Ajustado de 45px para 35px para subir o menu */
+    right: 10px;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 9999;
+    padding: 8px 0;
+}
+
+.profile-header {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e4e6eb;
+    margin-bottom: 8px;
+}
+
+.profile-header img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    color: #1c1e21;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.profile-group {
+    color: #65676b;
+    font-size: 13px;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    color: #1c1e21;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.profile-link i {
+    color: #65676b;
+    font-size: 16px;
+    width: 20px;
+    margin-right: 12px;
+}
+
+.profile-link i.fa-chevron-right {
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 12px;
+}
+
+.shortcut {
+    margin-left: auto;
+    color: #65676b;
+    font-size: 12px;
+}
+
+.profile-link:hover {
+    background-color: #f2f2f2;
+}
+
+.profile-dropdown.active {
+    display: block;  /* Alterado para display block */
+}
+
+/* Removendo estilos duplicados e mantendo apenas os corretos */
+.profile-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+.profile-name {
+    color: #1c1e21;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.profile-group {
+    color: #65676b;
+    font-size: 12px;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #1c1e21;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.profile-link i {
+    color: #1c1e21;
+}
+
+.profile-link:hover {
+    background-color: #f2f2f2;
+    color: #1c1e21;
+}
+
+.profile-link i.fa-chevron-right {
+    color: #65676b;
+}
+
+.shortcut {
+    color: #65676b;
+}
+
+@media (max-width: 768px) {
+    .profile-dropdown {
+        width: 260px;
+        right: -70px;
+    }
+}

@@ -1,0 +1,380 @@
+.terms-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.terms-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terms-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.terms-container::-webkit-scrollbar-thumb {
+    background: var(--orange-color);
+    border-radius: 4px;
+}
+
+.terms-container::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-color);
+}.terms-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.card-body {
+    padding: 20px;
+    background-color: white;
+}
+.terms-content {
+    line-height: 1.6;
+}
+
+.terms-content h5 {
+    color: var(--bluemarine-color);
+    font-size: 20px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.terms-content p {
+    color: #606770;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.terms-acceptance {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#confirmButton {
+    min-width: 200px;
+    background-color: var(--orange-color);
+    border: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+#confirmButton:hover {
+    background-color: var(--rose-color);
+    transform: translateY(-2px);
+}
+
+#confirmButton:disabled {
+    opacity: 0.6;
+    transform: none;
+}
+
+.form-check-label {
+    color: #606770;
+    font-size: 14px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid white;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.card-header h2 {
+    color: var(--bluemarine-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.terms-acceptance .form-check {
+    text-align: left;
+}
+
+#confirmButton {
+    min-width: 200px;
+}
+
+#confirmButton:disabled {
+    opacity: 0.6;
+}
+
+:root {
+    --orange-color: #FF8C61;
+    --rose-color: #FF5E8A;
+    --ciane-color: #00D4FF;
+    --bluemarine-color: #03124e;
+}
+
+body {
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-header img {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.developer-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dev-role {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dev-description {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-links a {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.social-links a {
+    font-size: 22px;
+}
+
+.aluno {
+    color: var(--ciane-color);
+}
+
+.connect {
+    color: var(--orange-color);
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.title {
+    color: var(--bluemarine-color);
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #606770;
+    margin-bottom: 40px;
+}
+
+.developers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+@media (min-width: 1200px) {
+    .developers-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .developers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.developer-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+}
+
+.dev-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.dev-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.developer-card h3 {
+    color: var(--bluemarine-color);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.dev-role {
+    color: var(--orange-color);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.dev-description {
+    color: #606770;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #606770;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--orange-color);
+}
+
+.footer {
+    background-color: white;
+    padding: 15px 20px;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer-links a {
+    color: #737373;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    color: #737373;
+    font-size: 11px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer img {
+    height: 25px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-left: -12px;
+}
+
+@media (max-width: 768px) {
+    .developers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo-header {
+        justify-content: flex-start;
+    }
+}
+
+.logo-header a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
