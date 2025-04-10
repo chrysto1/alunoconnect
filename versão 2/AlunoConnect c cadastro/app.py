@@ -378,5 +378,9 @@ def pesquisar():
 
     
 
+@sistema.route('/terms')
+def terms():
+    return render_template('terms.html')
+
 if __name__ == "__main__":
     sistema.run(debug=True, port=8085, host='127.0.0.1')
