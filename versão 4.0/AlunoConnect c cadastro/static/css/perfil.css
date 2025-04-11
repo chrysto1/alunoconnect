@@ -1,0 +1,592 @@
+:root {
+    --orange-color: #FF8C61;
+    --rose-color: #FF5E8A;
+    --ciane-color: #00D4FF;
+    --bluemarine-color: #03124e;
+    --light-gray: #f3f2ef;
+    --border-color: #e0e0e0;
+    --linkedin-blue: #0077b5;
+    --blue-button: #0073b1;
+    --blue-light: #f0f8ff;
+    --text-primary: rgba(0, 0, 0, 0.9);
+    --text-secondary: rgba(0, 0, 0, 0.6);
+}
+
+.postagens {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre postagens */
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.postagem {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    border: 2px solid #ddd; /* Borda leve */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.postagem p {
+    font-size: 16px;
+    color: #333; /* Cor do texto */
+    margin: 5px 0;
+}
+
+.postagem strong {
+    color: #007bff; /* Destaque para data e hora */
+}
+
+.postagem form {
+    margin-top: 10px;
+}
+
+.postagem input[type="submit"] {
+    background-color: #dc3545; /* Cor do botão de exclusão */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.postagem input[type="submit"]:hover {
+    background-color: #c82333; /* Efeito ao passar o mouse */
+}
+
+
+.conteudo_perfil{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: 52px;
+    background-color: var(--light-gray);
+    min-height: 100vh;
+    display: block;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    max-width: 1128px;
+    margin: 24px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 770px) 300px;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Cards gerais */
+.profile-card, 
+.analytics-card,
+.about-section,
+.skills-section,
+.language-section,
+.public-url-section,
+.profile-views-section {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+/* Header com código de fundo */
+.profile-header {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #111720 0%, #18202B 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.code-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.code-line {
+    margin: 5px 0;
+}
+
+.edit-cover-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    text-decoration: none;
+}
+
+/* Seção de perfil */
+.profile-section {
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+
+.profile-picture {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+    background-color: #f0f2f5;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-profile-photo {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-info {
+    flex: 1;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+
+.profile-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.profile-name-container h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.verified-icon {
+    color: var(--linkedin-blue);
+    font-size: 16px;
+}
+
+.edit-profile-btn {
+    color: #666;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.profile-title {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin: 3px 0 8px 0;
+}
+
+.profile-location {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0 0 8px 0;
+}
+
+.profile-location a {
+    color: var(--linkedin-blue);
+    text-decoration: none;
+}
+
+.profile-links {
+    margin: 8px 0;
+}
+
+.profile-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--linkedin-blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 16px;
+}
+
+.profile-link i {
+    margin-right: 4px;
+}
+
+.profile-connections {
+    font-size: 14px;
+    color: var(--linkedin-blue);
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.profile-institution {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.institution-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 8px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.institution-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Botões de ação do perfil */
+.profile-action-buttons {
+    display: flex;
+    gap: 8px;
+    padding: 0 20px 20px 20px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.primary-btn {
+    background-color: var(--blue-button);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #006097;
+}
+
+.secondary-btn {
+    background-color: white;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.secondary-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+/* Seção de status de emprego */
+.job-status-section {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.job-search-info, .hire-info {
+    background-color: var(--blue-light);
+    border: 1px solid #dce6f1;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.job-search-info h3, .hire-info h3 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.job-search-info p, .hire-info p {
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+    line-height: 1.4;
+}
+
+.view-details, .start-now {
+    color: var(--linkedin-blue);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.edit-job-status, .close-hire-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #666;
+    text-decoration: none;
+}
+
+/* Seção de análise */
+.analytics-card {
+    overflow: hidden;
+}
+
+.analytics-header {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.analytics-header h3 {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.analytics-header p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.analytics-content {
+    padding: 0 16px;
+}
+
+.analytics-item {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.analytics-icon {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f3f2ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: #666;
+}
+
+.analytics-info h4 {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    color: var(--text-primary);
+}
+
+.analytics-info p {
+    font-size: 12px;
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.time-period {
+    margin-top: 4px !important;
+    font-style: italic;
+}
+
+.analytics-footer {
+    padding: 12px 16px;
+    text-align: right;
+}
+
+.analytics-footer a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Seção Sobre */
+.about-section, .skills-section {
+    padding: 16px;
+}
+
+.about-header, .skills-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.about-header h3, .skills-header h3 {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.edit-about, .view-all-skills {
+    color: #666;
+    text-decoration: none;
+}
+
+.about-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Coluna lateral direita */
+.sidebar-right {
+    grid-column: 2;
+    margin-top: -16px;
+}
+
+/* Footer na coluna direita */
+.sidebar-right .footer {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 16px;
+    border: none;
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+}
+
+.sidebar-right .footer-content {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+}
+
+.sidebar-right .footer {
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--rose-color);
+    text-decoration: underline;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-brand span {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.sidebar-right .footer-links a {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.sidebar-right .footer-links a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+.sidebar-right .footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    padding: 8px 0;
+}
+
+.sidebar-right .logo-footer {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-right .logo-footer img {
+    height: 20px;
+    width: auto;
+}

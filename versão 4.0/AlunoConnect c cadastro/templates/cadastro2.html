@@ -1,0 +1,276 @@
+<!-- tela de cadastro | login.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>AlunoConnect | Cadastro</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../static/img/logo/logonaback.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/cadastro.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main-container">
+        <!-- Logo e título centralizados -->
+        <div class="logo-header">
+            <img src="../static/img/logo/logonaback.png" alt="Logo AlunoConnect">
+            <h1><span class="aluno">Aluno</span><span class="connect">Connect</span></h1>
+        </div>
+
+        <!-- Formulário de cadastro -->
+        <form class="form" action="/finalizar_cadastro" method="POST">
+            <h3>Complete seu cadastro</h3>
+            <p class="subtitle">Informações acadêmicas</p>
+
+            <div class="inputForm">
+                <label>Telefone</label>
+                <div class="phone-group">
+                    <select name="country_code" class="input phone-code" id="country-select">
+                    </select>
+                    <input placeholder="(DDD) 00000-0000" class="input phone-number" type="tel" name="phone" id="phone-input">
+                    <!-- Campo oculto para armazenar o número completo -->
+                    <input type="hidden" name="full_phone" id="full-phone">
+                </div>
+            </div>
+
+            <div class="inputForm">
+                <label>Curso Técnico</label>
+                <select name="curso" class="input">
+                    <option value="">Selecione seu curso</option>
+                    
+                    <optgroup label="GASTRONOMIA">
+                        <option value="Atendente de Lanchonete">Atendente de Lanchonete</option>
+                        <option value="Auxiliar de Cozinha">Auxiliar de Cozinha</option>
+                        <option value="Barista">Barista</option>
+                        <option value="Bartender">Bartender</option>
+                        <option value="Boas Práticas para Serviços de Alimentação">Boas Práticas para Serviços de Alimentação</option>
+                        <option value="Cake Design">Cake Design</option>
+                        <option value="Confeitaria sem Açúcar">Confeitaria sem Açúcar</option>
+                        <option value="Confeitaria sem Glúten e sem Lactose">Confeitaria sem Glúten e sem Lactose</option>
+                        <option value="Confeitaria Vegana">Confeitaria Vegana</option>
+                        <option value="Confeiteiro">Confeiteiro</option>
+                        <option value="Cozinha Asiática">Cozinha Asiática</option>
+                        <option value="Cozinha das Américas">Cozinha das Américas</option>
+                        <option value="Cozinha Europeia">Cozinha Europeia</option>
+                        <option value="Cozinha Mediterrânea">Cozinha Mediterrânea</option>
+                        <option value="Cozinhas Vegetarianas">Cozinhas Vegetarianas</option>
+                        <option value="Cozinheiro">Cozinheiro</option>
+                        <option value="Doceiro">Doceiro</option>
+                        <option value="Doces e Salgados para Festas">Doces e Salgados para Festas</option>
+                        <option value="Garçom">Garçom</option>
+                        <option value="Hostess">Hostess</option>
+                        <option value="Massas Folhadas">Massas Folhadas</option>
+                        <option value="Padeiro">Padeiro</option>
+                        <option value="Pizzaiolo">Pizzaiolo</option>
+                        <option value="Preparo de Pizzas sem Glúten sem Lactose">Preparo de Pizzas sem Glúten sem Lactose</option>
+                        <option value="Qualidade no Atendimento em Serviços de Alimentos e Bebidas">Qualidade no Atendimento em Serviços de Alimentos e Bebidas</option>
+                        <option value="Salgadeiro">Salgadeiro</option>
+                        <option value="Técnico em Gastronomia">Técnico em Gastronomia</option>
+                        <option value="Tortas Finas">Tortas Finas</option>
+                    </optgroup>
+
+                    <optgroup label="TURISMO E HOSPITALIDADE">
+                        <option value="Agente de Informação Turística">Agente de Informação Turística</option>
+                        <option value="Atendimento de Pessoas com Deficiência no Turismo">Atendimento de Pessoas com Deficiência no Turismo</option>
+                        <option value="Camareira em Meios de Hospedagem">Camareira em Meios de Hospedagem</option>
+                        <option value="Camareiro em Meios de Hospedagem">Camareiro em Meios de Hospedagem</option>
+                        <option value="Cerimonialista">Cerimonialista</option>
+                        <option value="Organizador de Eventos">Organizador de Eventos</option>
+                        <option value="Recepcionista de Eventos">Recepcionista de Eventos</option>
+                        <option value="Recepcionista em Meios de Hospedagem">Recepcionista em Meios de Hospedagem</option>
+                        <option value="Recreador">Recreador</option>
+                        <option value="Supervisão em Governança">Supervisão em Governança</option>
+                        <option value="Técnico em Eventos">Técnico em Eventos</option>
+                        <option value="Técnico em Guia de Turismo">Técnico em Guia de Turismo</option>
+                        <option value="Técnico em Hospedagem">Técnico em Hospedagem</option>
+                    </optgroup>
+
+                    <!-- Continue with the same pattern for all other groups -->
+                    <optgroup label="SAÚDE">
+                        <option value="Atendente de Farmácia">Atendente de Farmácia</option>
+                        <option value="Atualização em Coleta Sanguínea e Interpretação de Exames Laboratoriais">Atualização em Coleta Sanguínea e Interpretação de Exames Laboratoriais</option>
+                        <option value="Atualização em Líquidos Cavitários">Atualização em Líquidos Cavitários</option>
+                        <option value="Auxiliar em Saúde Bucal">Auxiliar em Saúde Bucal</option>
+                        <option value="Bioquímica Laboratorial">Bioquímica Laboratorial</option>
+                        <option value="Cálculos e Segurança na Administração de Medicamentos">Cálculos e Segurança na Administração de Medicamentos</option>
+                        <option value="Copeiro Hospitalar">Copeiro Hospitalar</option>
+                        <option value="Cuidador de Idoso">Cuidador de Idoso</option>
+                        <option value="Faturamento Médico e Hospitalar">Faturamento Médico e Hospitalar</option>
+                        <option value="Instrumentação Cirúrgica">Instrumentação Cirúrgica</option>
+                        <option value="Massagista">Massagista</option>
+                        <option value="Procedimentos Aplicados à Punção Venosa: Enfermagem">Procedimentos Aplicados à Punção Venosa: Enfermagem</option>
+                        <option value="Recepcionista em Serviços de Saúde">Recepcionista em Serviços de Saúde</option>
+                        <option value="Técnicas de Microscopia Laboratorial">Técnicas de Microscopia Laboratorial</option>
+                        <option value="Técnicas Radiológicas">Técnicas Radiológicas</option>
+                        <option value="Técnico em Análises Clínicas">Técnico em Análises Clínicas</option>
+                        <option value="Técnico em Enfermagem">Técnico em Enfermagem</option>
+                        <option value="Técnico em Estética">Técnico em Estética</option>
+                        <option value="Técnico em Nutrição e Dietética">Técnico em Nutrição e Dietética</option>
+                        <option value="Técnico em Radiologia">Técnico em Radiologia</option>
+                        <option value="Técnico em Saúde Bucal">Técnico em Saúde Bucal</option>
+                    </optgroup>
+
+                    <optgroup label="TECNOLOGIA DA INFORMAÇÃO">
+                        <option value="Administrador de Redes">Administrador de Redes</option>
+                        <option value="Aplicações Web com Python">Aplicações Web com Python</option>
+                        <option value="Business Intelligence com Excel">Business Intelligence com Excel</option>
+                        <option value="Business Intelligence com Power BI">Business Intelligence com Power BI</option>
+                        <option value="CCNAv7: Introduction to Networks">CCNAv7: Introduction to Networks</option>
+                        <option value="CCNAv7: Switching Routing and Wireless">CCNAv7: Switching Routing and Wireless</option>
+                        <option value="Criando Aplicativos com Flutter">Criando Aplicativos com Flutter</option>
+                        <option value="Desenvolver Banco de Dados">Desenvolver Banco de Dados</option>
+                        <option value="Desenvolver Sistema de Informação">Desenvolver Sistema de Informação</option>
+                        <option value="Desenvolvimento Web: Front End">Desenvolvimento Web: Front End</option>
+                        <option value="Implantação de Rede Local com Windows">Implantação de Rede Local com Windows</option>
+                        <option value="Implementar Banco de Dados">Implementar Banco de Dados</option>
+                        <option value="Instalador e Reparador de Redes de Computadores">Instalador e Reparador de Redes de Computadores</option>
+                        <option value="JavaScript: Interatividade para Web">JavaScript: Interatividade para Web</option>
+                        <option value="Operador de Computador">Operador de Computador</option>
+                        <option value="Planejar e Executar a Manutenção de Redes Locais de Computadores">Planejar e Executar a Manutenção de Redes Locais de Computadores</option>
+                        <option value="Programador de Sistemas">Programador de Sistemas</option>
+                        <option value="Programador Web">Programador Web</option>
+                        <option value="Técnico em Computação Gráfica">Técnico em Computação Gráfica</option>
+                        <option value="Técnico em Informática">Técnico em Informática</option>
+                        <option value="Técnico em Informática para Internet">Técnico em Informática para Internet</option>
+                        <option value="Técnico em Manutenção e Suporte em Informática">Técnico em Manutenção e Suporte em Informática</option>
+                        <option value="Técnico em Redes de Computadores">Técnico em Redes de Computadores</option>
+                    </optgroup>
+
+                    <optgroup label="BELEZA E ESTÉTICA">
+                        <option value="Barbeiro">Barbeiro</option>
+                        <option value="Cabeleireiro">Cabeleireiro</option>
+                        <option value="Depilador">Depilador</option>
+                        <option value="Design de Mechas e de Cor">Design de Mechas e de Cor</option>
+                        <option value="Manicure e Pedicure">Manicure e Pedicure</option>
+                        <option value="Maquiador">Maquiador</option>
+                        <option value="Maquiagem para Festa">Maquiagem para Festa</option>
+                        <option value="Maquiagem para Noivas">Maquiagem para Noivas</option>
+                        <option value="Modelagem e Henna para Sobrancelhas">Modelagem e Henna para Sobrancelhas</option>
+                        <option value="Terapia Capilar">Terapia Capilar</option>
+                    </optgroup>
+
+                    <optgroup label="GESTÃO E COMÉRCIO">
+                        <option value="A Arte de se Comunicar e Vender Mais">A Arte de se Comunicar e Vender Mais</option>
+                        <option value="Assistente Administrativo">Assistente Administrativo</option>
+                        <option value="Assistente de Logística">Assistente de Logística</option>
+                        <option value="Assistente de Recursos Humanos">Assistente de Recursos Humanos</option>
+                        <option value="Assistente Financeiro">Assistente Financeiro</option>
+                        <option value="Desenvolvimento de Equipes">Desenvolvimento de Equipes</option>
+                        <option value="Estoquista">Estoquista</option>
+                        <option value="Inteligência Emocional em Vendas">Inteligência Emocional em Vendas</option>
+                        <option value="Operador de Caixa">Operador de Caixa</option>
+                        <option value="Operador de Telemarketing">Operador de Telemarketing</option>
+                        <option value="Promotor de Vendas">Promotor de Vendas</option>
+                        <option value="Recepcionista">Recepcionista</option>
+                        <option value="Repositor de Mercadorias">Repositor de Mercadorias</option>
+                        <option value="Técnico em Administração">Técnico em Administração</option>
+                        <option value="Técnico em Logística">Técnico em Logística</option>
+                        <option value="Técnico em Recursos Humanos">Técnico em Recursos Humanos</option>
+                        <option value="Técnico em Secretariado">Técnico em Secretariado</option>
+                    </optgroup>
+
+                    <optgroup label="IDIOMAS">
+                        <option value="Espanhol Básico Aplicado aos Serviços Turísticos">Espanhol Básico Aplicado aos Serviços Turísticos</option>
+                        <option value="Espanhol para Hotelaria">Espanhol para Hotelaria</option>
+                        <option value="Inglês Básico Aplicado aos Serviços Turísticos">Inglês Básico Aplicado aos Serviços Turísticos</option>
+                        <option value="Inglês para Hotelaria">Inglês para Hotelaria</option>
+                    </optgroup>
+
+                    <optgroup label="INFRAESTRUTURA">
+                        <option value="Agente de Limpeza e Conservação">Agente de Limpeza e Conservação</option>
+                        <option value="Frentista">Frentista</option>
+                        <option value="Portaria Remota">Portaria Remota</option>
+                        <option value="Porteiro e Vigia">Porteiro e Vigia</option>
+                    </optgroup>
+
+                    <optgroup label="MODA">
+                        <option value="Alfaiataria Feminina">Alfaiataria Feminina</option>
+                        <option value="Consultoria de Imagem">Consultoria de Imagem</option>
+                        <option value="Costura de Moda Íntima">Costura de Moda Íntima</option>
+                        <option value="Costura e Modelagem">Costura e Modelagem</option>
+                        <option value="Costura Industrial">Costura Industrial</option>
+                        <option value="Costureiro">Costureiro</option>
+                        <option value="Desenhista de Moda">Desenhista de Moda</option>
+                        <option value="Estilista de Moda">Estilista de Moda</option>
+                        <option value="Modelagem Infantil">Modelagem Infantil</option>
+                        <option value="Modelista">Modelista</option>
+                        <option value="Moulage">Moulage</option>
+                        <option value="Plus Size: Consultoria de Imagem e Estilo">Plus Size: Consultoria de Imagem e Estilo</option>
+                        <option value="Vitrinista">Vitrinista</option>
+                    </optgroup>
+
+                    <optgroup label="SEGURANÇA">
+                        <option value="Técnico em Segurança do Trabalho">Técnico em Segurança do Trabalho</option>
+                    </optgroup>
+            </select>
+        </div>
+
+            <div class="inputForm">
+                <label>Polo</label>
+                <select name="polo" class="input">
+                    <option value="">Selecione seu polo</option>
+                    <option value="Posto Avançado Palmeira dos Índios">Posto Avançado Palmeira dos Índios</option>
+                    <option value="Posto Avançado União dos Palmares">Posto Avançado União dos Palmares</option>
+                    <option value="Unidade Arapiraca">Unidade Arapiraca</option>
+                    <option value="Unidade Poço">Unidade Poço</option>
+                </select>
+            </div>
+
+            <div class="inputForm">
+                <label>Número de matrícula <i class="fas fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Este número de matrícula é utilizado para identificar cada aluno de forma exclusiva em cada unidade específica."></i></label>
+                <input placeholder="Digite seu número de matrícula" class="input" type="text" name="matricula">
+            </div>
+
+            <p class="terms">Ao clicar em Cadastre-se, você concorda com nossos <a href="#">Termos</a>, <a href="#">Política de Privacidade</a> e <a href="#">Política de Cookies</a>.</p>
+
+            <button type="submit" class="button-submit">Cadastre-se</button>
+            
+            <p class="login-link">Já tem uma conta? <a href="login.html">Entrar</a></p>
+        </form>
+    </div>
+</div>    
+    <footer class="footer">
+        <div class="footer-content">
+            
+            <div class="footer-links">
+                <a href="#">Sobre</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Carreiras</a>
+                <a href="#">Cookies</a>
+                <a href="developers.html">Desenvolvedores</a>
+            </div>
+            <div class="footer-copyright">
+                <div class="logo-footer">
+                    <img src="../static/img/logo/logocomtext.png" alt="Logo AlunoConnect">
+                </div>
+                <div class="copyright">
+                © 2025
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../static/js/main.js"></script>
+    <script src='../static/js/register.js'></script>
+</body>
+</html>
