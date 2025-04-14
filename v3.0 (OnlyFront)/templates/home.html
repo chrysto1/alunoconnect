@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Título da página -->
     <title>AlunoConnect | Feed</title>
 
@@ -11,7 +12,6 @@
     <link rel="icon" type="image/x-icon" href="../static/img/logo/logonaback.png">
 
     <!-- CSS -->
-     <link rel="stylesheet" href="../static/css/postagem.css">
     <link rel="stylesheet" href="../static/css/home.css">
     <link rel="stylesheet" href="../static/css/nav.css">
     
@@ -28,50 +28,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="nav-tabs-1">
-        <a href="#" class="nav-icon active"><i class="fas fa-home"></i></a>
-        <a href="#" class="nav-icon"><i class="fas fa-users"></i></a>
-        <a href="#" class="nav-icon"><i class="fas fa-graduation-cap"></i></a>
-        <a href="#" class="nav-icon"><i class="fas fa-book"></i></a>
-    </div>
-
-
     <!-- Navbar fora do container1
     para que fique fixada no top -->
     <nav class="navbar">
-        
-            <div class="nav-left">
-                <img src="../static/img/logo/logonaback.png" alt="Logo AlunoConnect" class="nav-logo">
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="pesquisar" class="pesquisar" placeholder="Pesquisar no AlunoConnect">
-                </div>
-                
+        <div class="nav-left">
+            <img src="../static/img/logo/logonaback.png" alt="Logo AlunoConnect" class="nav-logo">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquisar no AlunoConnect">
             </div>
-       
+        </div>
         <div class="nav-center">
             <div class="nav-tabs">
                 <a href="#" class="nav-icon active"><i class="fas fa-home"></i></a>
-                <a href="#" class="nav-icon"><i class="fas fa-users"></i></a>
-                <a href="#" class="nav-icon"><i class="fas fa-graduation-cap"></i></a>
-                <a href="#" class="nav-icon"><i class="fas fa-book"></i></a>
+                <a href="social.html" class="nav-icon"><i class="fas fa-users"></i></a>
+                <a href="Eventos.html" class="nav-icon"><i class="fas fa-calendar"></i></a>
+                <a href="Biblioteca.html" class="nav-icon"><i class="fas fa-book"></i></a>
             </div>
         </div>
         <div class="nav-right">
             <div class="nav-actions">
-                <a href="#" class="nav-icon-circle"><i class="fas fa-envelope"></i></a>
+    
                 <a href="#" class="nav-icon-circle"><i class="fas fa-bell"></i></a>
                 <div class="nav-profile" id="profileButton">
                     <img src="../static/img/profile/default.png" alt="Profile">
                 </div>
                 <!-- Novo menu dropdown -->
                 <div class="profile-dropdown" id="profileMenu">
-                    <div class="profile-header" style="cursor: pointer;" onclick="window.location.href='/perfil/{{ session.user_id }}'">
+                    <div class="profile-header">
                         <img src="../static/img/profile/default.png" alt="Profile">
-                        <div class="profile-info" style="text-align: left;">
-                            <span class="profile-name">{{ session.nome }}</span>
-                            <span class="profile-group">Estudante | {{ session.curso }}</span>
+                        <div class="profile-info">
+                            <span class="profile-name">Usuário</span>
+                            <span class="profile-group">Grupo</span>
                         </div>
                     </div>
                     <div class="profile-links">
@@ -80,19 +68,13 @@
                             Configurações e privacidade
                             <i class="fas fa-chevron-right"></i>
                         </a>
-                        <a href="#" class="profile-link">
+                        <a href="centralhelp.html" class="profile-link">
                             <i class="fas fa-question-circle"></i>
                             Ajuda e suporte
                             <i class="fas fa-chevron-right"></i>
                         </a>
-                        <a href="#" class="profile-link">
-                            <i class="fas fa-moon"></i>
-                            Tela e acessibilidade
-                            <i class="fas fa-chevron-right"></i>
-                        </a>
-                        <a href="#" class="profile-link">
-                            <i class="fas fa-comment-alt"></i>
-                            Dar feedback
+                      
+        
                         </a>
                         <a href="/logout" class="profile-link">
                             <i class="fas fa-sign-out-alt"></i>
@@ -103,13 +85,6 @@
             </div>
         </div>
     </nav>
-
-    <div id="resultados"></div>
-
-
-    <div class="resultado_pesquisa_de_perfil" id="resultado">
-        <!-- Aqui será exibido o resultado da pesquisa -->
-    </div>
     <!-- Botão de rolar para cima -->
     <div class="scroll-to-top" id="scrollToTop">
         <i class="fas fa-arrow-up"></i>
@@ -125,8 +100,8 @@
                 <div class="profile-cover"></div>
                 <div class="profile-info">
                     <img src="../static/img/profile/default.png" alt="Profile">
-                    <h2>{{ session.nome }}</h2>
-                    <p>Estudante | {{ session.curso }}</p>
+                    <h2>Nome do Usuário</h2>
+                    <p>Estudante | Curso</p>
                     <p>Instituição de Ensino</p>
                 </div>
             </div>
@@ -134,19 +109,15 @@
             <!-- Menu de Links -->
             <div class="menu-links">
                 <div class="menu-group">
-                    <a href="/itens-salvos">
-                        <i class="fas fa-bookmark"></i>
-                        Itens salvos
-                    </a>
-                    <a href="/grupos">
+                    <a href="Grupos.html">
                         <i class="fas fa-users"></i>
                         Grupos
                     </a>
-                    <a href="/newsletters">
+                    <a href="newsletters.html">
                         <i class="fas fa-newspaper"></i>
                         Newsletters
                     </a>
-                    <a href="/eventos">
+                    <a href="Eventos.html">
                         <i class="fas fa-calendar"></i>
                         Eventos
                     </a>
@@ -159,23 +130,20 @@
             <!-- Área de Criar Post -->
             <div class="postar">
                 <div class="area_postar">
-                    <img  src="../static/img/profile/default.png" alt="Profile">
-                    <button  class="post-input-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img src="../static/img/profile/default.png" alt="Profile">
+                    <button class="post-input-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Compartilhe suas conquistas acadêmicas...
                     </button>
                 </div>
                 <div class="area_documentos_fotos">
-                    <!-- Botão que abre o modal -->
                     <button data-bs-toggle="modal" data-bs-target="#modalFoto">
-                    <i class="fas fa-images" style="color: #45bd62;"></i>
-                    <span>Foto</span>
+                        <i class="fas fa-images" style="color: #45bd62;"></i>
+                        <span>Foto</span>
                     </button>
-
                     <button data-bs-toggle="modal" data-bs-target="#modalVideo">
                         <i class="fas fa-video" style="color: #f02849;"></i>
                         <span>Vídeo</span>
                     </button>
-
                     <button data-bs-toggle="modal" data-bs-target="#modalAtividade">
                         <i class="fas fa-book-open" style="color: #f7b928;"></i>
                         <span>Atividade</span>
@@ -185,46 +153,13 @@
     
             <!-- Área de Posts -->
             <div class="postagem">
-                {% if publicacoes %}
-                    {% for i in publicacoes %}
-                        <div class="post">
-                            <div class="header_postagem">
-                                <img src="../static/img/profile/default.png" style="height: 30px;" alt="">
-                                <p class="nome"><strong>{{ i[3] }}</strong></p> <!-- Nome do aluno -->
-                            </div>
-                            <p class="texto">{{ i[0] }}</p> <!-- Postagem -->
-                            
-                            <div class="barra_curtidas">
-                                <form class="forme_curtida" action="/curtir" method="POST">
-                                    <!--adicionar uma animação para o coração ficar vermelho quando o usuário clicar em cima-->
-                                    <button type="button" class="heart-btn" onclick="toggleCurtir(this)">
-                                        <i class="fa fa-heart"></i>
-                                    </button>
-
-                                    <!--adicioner um incone de compartilhar como uma seta para a direita-->
-                                    <button class="compartilhar">
-                                        <i class="fa fa-share"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            
-                            <div class="area_comentarios">
-                                <form class="comentar" action="/comentar" method="POST">
-                                    <input class="barra_comentario" type="text" name="comentario" placeholder="Digite seu comentário">
-                                    <input class="butao_comenta" type="submit" value="Comentar">
-                                </form>
-                            </div>
-                            
-                        </div>
-                    {% endfor %}
-                {% else %}
-                    <p>Nenhuma publicação encontrada.</p>
-                {% endif %}
-                <br><br><br>
-            <br><br><br>
+            
+                <div class="postagem">
+                    
+                </div>
+                <img src="../static/img/icons/VINISEDUTOR.png" alt="Logo do site" style="display: block; margin: auto;">
+             
             </div>
-            <br><br><br>
-            <br><br><br>
         </div>
     
         <!-- Coluna Direita -->
@@ -258,12 +193,10 @@
             <!-- Footer Links (código existente) -->
             <div class="footer-links">
                 <div class="footer-group">
-                    <a href="#">Sobre</a>
-                    <a href="#">Acessibilidade</a>
-                    <a href="#">Central de Ajuda</a>
-                    <a href="#">Termos e Privacidade</a>
-                    <a href="#">Preferências de anúncios</a>
-                    <a href="/developers">Desenvolvedores</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="centralhelp.html">Central de Ajuda</a>
+                    <a href="termos.html">Termos e Privacidade</a>
+                    <a href="developers.html">Desenvolvedores</a>
                 </div>
                 <div class="footer-copyright">
                     <img src="../static/img/logo/logonaback.png" alt="Logo">
@@ -275,7 +208,7 @@
 
   <!-- Modal de Criar Post -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered custom-modal">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Criar publicação</h5>
@@ -294,35 +227,12 @@
                     </div>
                 </div>
                 <!-- Formulário para envio da publicação -->
-                <form class="forme_modal" action="/processar_dados" method="post" >
-                    <textarea name="conteudo"></textarea>
-                    <div style="width: 100%; display: flex; justify-content: end; align-items: center; gap: 10px;">
-                        <img src="../static/img/logo/clock-with-white-face_icon-icons.com_72804.ico" style="height: 30px;" alt="">
-                        <input type="submit" value="enviar">
+                <form action="/publicacao_texto" method="POST">
+                    <div class="post-content">
+                        <textarea id="conteudo" name="conteudo" placeholder="Sobre o que você quer falar?" required></textarea>
                     </div>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--modal da postagem de foto-->
-<div class="modal fade" id="modalFoto" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Foto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <form class="forme_foto" action="/postar_foto">
-                    <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="inputGroupFile02" name="foto">
-                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                    </div>                      
-                    <div style="display: flex; width: 100%; justify-content: end;">
-                        <input type="submit" value="postar">
+                    <div class="modal-footer">
+                        <input type="submit" value="Publicar" class="publish-btn">
                     </div>
                 </form>
             </div>
@@ -330,19 +240,14 @@
     </div>
 </div>
 
-<!--modal de comentários-->
-<div id="modalComentarios" class="modal">
-    <p>Comentários...</p>
-    <button onclick="fecharModal()">Fechar</button>
-</div>
 
-    <script src="../static/js/pesquisa.js"></script>
-    <script src="../static/js/postagens.js"></script>
-  <script src="../static/js/home.js"></script>
+  <script src="../static/js/js.js"></script>
 
     <!-- Scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    
     <script src="../static/js/nav.js"></script>
     
 </body>
