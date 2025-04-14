@@ -1,0 +1,204 @@
+.forme_curtida{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 30%;
+}
+
+form button{
+    background: none;
+    border: none;
+}
+
+.header_postagem{
+    display: flex;
+    gap: 10px;
+}
+
+.comentar{
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.barra_curtidas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilização geral das postagens */
+.postagem {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px; /* Mantém a largura controlada */
+    margin: auto;
+    overflow-y: scroll;
+    max-height: 900px;
+}
+
+
+
+.postagem::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0);/* Oculta a barra de rolagem */
+}
+
+
+/* Cada postagem */
+.post {
+    background-color: #f8f4f4;
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.281);
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+/* Nome do usuário */
+.nome {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Data e hora */
+.data-hora {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Conteúdo da postagem */
+.texto {
+    font-size: 14px;
+    color: #222;
+}
+
+/* Barra de curtidas */
+.barra_curtidas {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.barra_curtidas input[type="submit"] {
+    background: none;
+    border: none;
+    color: #ff2e63;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.barra_curtidas input[type="submit"]:hover {
+    text-decoration: underline;
+}
+
+/* Área de comentários */
+.area_comentarios {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heart-btn {
+    font-size: 20px;
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.heart-btn.curtido {
+    color: red;
+}
+
+.comentar {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.comentar .barra_comentario {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+}
+
+.butao_comenta{
+    background-color: rgb(25, 25, 31);
+    color: white;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.forme_modal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.forme_modal textarea{
+    border: none;
+    border-radius: 7px;
+}
+
+.forme_modal input{
+    width: 20%;
+    background-color: rgb(0, 70, 128);
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.forme_foto{
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+}
+
+.forme_foto input[type="file"]{
+    text-decoration: none;
+}
+
+.forme_foto input[type="submit"]{
+    width: 20%;
+    margin-right: 50px;
+    padding: 10px;
+    background-color: rgb(6, 6, 158);
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.forme_foto input[type="submit"]:hover{
+    background-color: blue;
+}
+
+/* Responsividade */
+@media screen and (max-width: 700px) {
+    .postagem {
+        max-width: 100%;
+    }
+
+    
+    .butao_comenta{
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+
+    .comentar{
+        gap: 10px;
+    }
+
+    
+
+}
