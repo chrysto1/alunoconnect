@@ -4,7 +4,17 @@
     --ciane-color: #00D4FF;
     --bluemarine-color: #03124e;
   }
+  .trending-item.hidden {
+    display: none;
+}
 
+.show-more.active i {
+    transform: rotate(180deg);
+}
+
+.show-more i {
+    transition: transform 0.3s ease;
+}
 .container1 {
     display: grid;
     grid-template-columns: 225px minmax(0, 540px) 300px;

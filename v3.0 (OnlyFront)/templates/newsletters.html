@@ -14,6 +14,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../static/css/home.css">
     <link rel="stylesheet" href="../static/css/nav.css">
+
+      <!--JavaScript-->
+      <script src="../static/js/nav.js"></script>
+      <script src="../static/js/trending.js"></script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -147,32 +151,45 @@
         </div>
        <!-- Coluna Direita -->
         <div class="contato1">
-            <!-- Temas em Alta -->
-            <div class="trending-topics">
-                <div class="trending-header">
-                    <h4>Temas em alta</h4>
-                    <span class="info-icon"><i class="fas fa-info-circle"></i></span>
-                </div>
-                <div class="trending-list">
-                    <div class="trending-item">
-                        <span class="topic-source">por AlunoConnect Notícias</span>
-                        <p class="topic-title">Novidades sobre o TCC</p>
-                        <span class="topic-stats">há 2h • 2.081 leitores</span>
-                    </div>
-                    <div class="trending-item">
-                        <span class="topic-source">por Coordenação</span>
-                        <p class="topic-title">Datas importantes do semestre</p>
-                        <span class="topic-stats">há 1d • 783 leitores</span>
-                    </div>
-                    <div class="trending-item">
-                        <span class="topic-source">por Biblioteca</span>
-                        <p class="topic-title">Novos livros disponíveis</p>
-                        <span class="topic-stats">há 1d • 470 leitores</span>
-                    </div>
-                </div>
-                <button class="show-more">Exibir mais <i class="fas fa-chevron-down"></i></button>
+           <!-- Temas em Alta -->
+           <div class="trending-topics">
+            <div class="trending-header">
+                <h4>Temas em alta</h4>
+                <span class="info-icon"><i class="fas fa-info-circle"></i></span>
             </div>
-      
+            <div class="trending-list">
+                <!-- Initial visible items -->
+                <div class="trending-item">
+                    <span class="topic-source">por AlunoConnect Notícias</span>
+                    <p class="topic-title">Novidades sobre o TCC</p>
+                    <span class="topic-stats">há 2h • 2.081 leitores</span>
+                </div>
+                <div class="trending-item">
+                    <span class="topic-source">por Coordenação</span>
+                    <p class="topic-title">Datas importantes do semestre</p>
+                    <span class="topic-stats">há 1d • 783 leitores</span>
+                </div>
+                <div class="trending-item">
+                    <span class="topic-source">por Biblioteca</span>
+                    <p class="topic-title">Novos livros disponíveis</p>
+                    <span class="topic-stats">há 1d • 470 leitores</span>
+                </div>
+                <!-- Hidden items (initially hidden) -->
+                <div class="trending-item hidden">
+                    <span class="topic-source">por Departamento Acadêmico</span>
+                    <p class="topic-title">Novas oportunidades de estágio</p>
+                    <span class="topic-stats">há 2d • 325 leitores</span>
+                </div>
+                <div class="trending-item hidden">
+                    <span class="topic-source">por Centro Estudantil</span>
+                    <p class="topic-title">Programação da semana acadêmica</p>
+                    <span class="topic-stats">há 3d • 289 leitores</span>
+                </div>
+            </div>
+            <button class="show-more" id="showMoreTrending">
+                Exibir mais <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
             <!-- Footer Links (código existente) -->
             <div class="footer-links">
                 <div class="footer-group">
